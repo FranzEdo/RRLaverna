@@ -2,14 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Galeri Kegiatan RR.Laverna Nov 07th 2024 till Nov 09th 2024</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #574caf;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centering the content */
+            overflow-x: hidden; /* Mencegah scroll horizontal */
         }
 
         header {
@@ -17,21 +21,36 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            width: 100%; /* Memastikan header lebar penuh */
+            box-sizing: border-box; /* Menjamin padding tidak mengubah ukuran */
         }
 
         h1 {
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the title */
+        }
+
+        .logo {
+            width: 80px; /* Ukuran logo */
+            height: auto; /* Tinggi otomatis agar proporsional */
+            margin: 0 15px; /* Ruang antar logo dan judul */
         }
 
         .banner {
             width: 100%;
             height: auto;
+            max-width: 1200px; /* Batasan lebar maksimum untuk banner */
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centering content in container */
         }
 
         .button {
@@ -63,7 +82,8 @@
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
-            width: calc(40% - 20px); /* Lebar item */
+            flex: 1 1 calc(33.33% - 20px); /* Responsif untuk layar besar */
+            max-width: 300px; /* Maksimal lebar item */
         }
 
         .item:hover {
@@ -87,15 +107,14 @@
             padding: 20px;
             background: #574caf;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
+            width: 100%; /* Memastikan footer lebar penuh */
+            box-sizing: border-box; /* Menjamin padding tidak mengubah ukuran */
         }
 
         .footer-img {
             width: 100%;
             height: auto;
+            max-width: 1200px; /* Batasan lebar maksimum untuk footer image */
         }
 
         @media (max-width: 600px) {
@@ -106,7 +125,7 @@
 
         @media (min-width: 601px) {
             .item {
-                flex: 1 1 calc(30% - 20px); /* Responsif untuk layar besar */
+                flex: 1 1 calc(33.33% - 20px); /* Responsif untuk layar besar */
             }
         }
 
@@ -132,8 +151,8 @@
         }
 
         .modal img {
-            max-width: 800px; /* Maksimal lebar gambar dalam modal */
-            max-height: 800px; /* Maksimal tinggi gambar dalam modal */
+            max-width: 90%; /* Maksimal lebar gambar dalam modal */
+            max-height: 90%; /* Maksimal tinggi gambar dalam modal */
             border-radius: 8px; /* Sudut tumpul untuk gambar modal */
         }
     </style>
@@ -141,21 +160,20 @@
 <body>
 
 <header>
-    <h1 style="display: flex; align-items: center; justify-content: space-between;">
-        <img src="Gambar/Hari Pertama/logo.png" alt="Logo Kiri" style="width: 293px; height: 308px; margin-right: 20px;">
+    <h1>
+        <img src="Gambar/Hari Pertama/logo.png" alt="Logo Kiri" class="logo">
         Galeri Kegiatan RR.Laverna Nov 07th 2024 till Nov 09th 2024
-        <img src="Gambar/Hari Pertama/logo2.png" alt="Logo Kanan" style="width: 293px; height: 308px; margin-left: 20px;">
+        <img src="Gambar/Hari Pertama/logo2.png" alt="Logo Kanan" class="logo">
     </h1>
 </header>
 
-<img src="Gambar/Hari Pertama/banner.png" alt="Banner Kegiatan" class="banner">
+<img src="gambar/Hari Pertama/banner.png" alt="Banner Kegiatan" class="banner">
 
 <div class="container">
     <div class="activity-buttons">
         <a href="Firstday.html" class="button">Hari Pertama RR Laverna</a>
-        <a href="Secondday.html" class="button">Kegiatan 2</a>
-        <a href="Thirdday.html" class="button">Kegiatan 3</a>
-        <a href="Fourthday.html" class="button">Kegiatan 4</a>
+        <a href="Secondday.html" class="button">Hari Kedua RR Laverna</a>
+        <a href="Thirdday.html" class="button">Hari Ketiga RR Laverna</a>
         <a href="video.html" class="button">Kumpulan Video</a>
     </div>
 
@@ -169,8 +187,8 @@
             <div class="item-title">Foto Bersama Ortu & Guru 02</div>
         </div>
         <div class="item" onclick="openModal('Gambar/Hari Pertama/image_25.jpg')">
-            <img src="Gambar/Hari Pertama/image_25.jpg" alt="Kegiatan 2">
-            <div class="item-title">Foto Bersama Ortu & Guru 02</div>
+            <img src="Gambar/Hari Pertama/image_25.jpg" alt="Kegiatan 3">
+            <div class="item-title">Foto Bersama Ortu & Guru 03</div>
         </div>
         <!-- Tambahkan lebih banyak item sesuai kebutuhan -->
     </div>
@@ -193,8 +211,8 @@
             modal.style.display = "none"; // Sembunyikan modal saat diklik
         }
     </script>
-    
 </div>
+
 <footer>
     <img src="Gambar/Hari Pertama/footer web.png" alt="Footer Gambar" class="footer-img">
     <p>&copy; Galeri Kegiatan RR Laverna Nov 07th till 09th 2024 </p>

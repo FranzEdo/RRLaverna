@@ -1,101 +1,162 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Kegiatan</title>
+    <title>Galeri Video</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Our CSS -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #574caf;
-            display: flex;
-            flex-direction: column; /* Mengatur orientasi ke kolom */
-            align-items: center; /* Menghimpun elemen di tengah */
-            padding: 20px; /* Ruang di sekitar halaman */
-        }
-
-        .video-container {
-            background: #d4d2e9;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px; /* Maksimal lebar player */
-            width: 100%; /* Lebar penuh di perangkat kecil */
-            margin-bottom: 20px; /* Ruang antar video */
-        }
-
-        video {
-            width: 100%; /* Lebar penuh untuk video */
-            height: auto; /* Tinggi otomatis untuk menjaga aspek rasio */
-            border-radius: 8px; /* Sudut tumpul untuk video */
-        }
-
-        .title {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .back-button {
-            margin-top: 20px; /* Jarak di atas tombol */
-            padding: 10px 20px; /* Ruang dalam tombol */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
             background-color: #4CAF50; /* Warna tombol */
             color: white; /* Warna teks */
             text-decoration: none; /* Menghapus garis bawah */
             border-radius: 5px; /* Sudut membulat */
             transition: background-color 0.3s; /* Efek transisi saat hover */
+            margin: 20px 0; /* Jarak atas dan bawah tombol */
         }
 
-        .back-button:hover {
-            background-color: #e90a4d; /* Warna saat hover */
+        .button:hover {
+            background-color: #45a049; /* Warna saat hover */
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px; /* Ruang pada layar kecil */
-            }
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #574caf;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 15px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slider .slick-slide {
+            border: solid 1px #000;
+            display: flex;
+            justify-content: center; /* Center the image in the slide */
+            align-items: center; /* Center the image in the slide */
+        }
+
+        .slider .slick-slide img {
+            width: 100%; /* Lebar gambar 100% dari kontainer */
+            height: 700px; /* Tinggi tetap untuk semua gambar */
+            object-fit: cover; /* Memastikan gambar terpotong secara proporsional */
+            border-radius: 8px; /* Sudut tumpul untuk gambar */
+        }
+
+        /* make button larger and change their positions */
+        .slick-prev, .slick-next {
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+        .slick-prev {
+            left: 5px;
+        }
+        .slick-next {
+            right: 5px;
+        }
+        .slick-prev:before, 
+        .slick-next:before {
+            font-size: 40px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        /* move dotted nav position */
+        .slick-dots {
+            bottom: 15px;
+        }
+        /* enlarge dots and change their colors */
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            opacity: 1;
+        }
+        .slick-dots li.slick-active button:before {
+            color: #dedede;
+        }
+
+        /* hide dots and arrow buttons when slider is not hovered */
+        .slider:not(:hover) .slick-arrow,
+        .slider:not(:hover) .slick-dots {
+            opacity: 0;
+        }
+        /* transition effects for opacity */
+        .slick-arrow,
+        .slick-dots {
+            transition: opacity 0.5s ease-out;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Galeri Video</h1>
+        <p>
+            Kumpulan Video Kegiatan RR Laverna Nov 07th till 09 th 2024
+        </p>
+        <div class="container">
+            <a href="index.html" class="button">Kembali ke Halaman Utama</a>
+            <div class="gallery" id="gallery">
+                <!-- Gambar akan dimuat di sini -->
+            </div>
 
-<div class="video-container">
-    <video controls>
-        <source src="Gambar/Hari Pertama/vidio01.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
-    <div class="title">Video Nov 07th 2024</div>
-</div>
+            <div class="slider">
+                <div class="video-container">
+                    <video controls>
+                        <source src="Gambar/Hari Pertama/vidio01.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="Gambar/Hari Pertama/vidio2.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="Gambar/Hari Pertama/vidio3.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="Gambar/Hari Kedua/vidio4.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video.
+                    </video>
+                </div>
 
-<div class="video-container">
-    <video controls>
-        <source src="Gambar/Hari Pertama/vidio2.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
-    <div class="title">Video Nov 07th 2024</div>
-</div>
 
-<div class="video-container">
-    <video controls>
-        <source src="Gambar/Hari Pertama/vidio3.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
-    <div class="title">Video Nov 07th 2024</div>
-</div>
+            </div>
+        </div>
+    </div>
 
-<div class="video-container">
-    <video controls>
-        <source src="Gambar/Hari Kedua/vidio4.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
-    <div class="title">Video Nov 08th 2024</div>
-</div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Slick JS -->    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<!-- Tambahkan lebih banyak video container sesuai kebutuhan -->
-
-<a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
+    <!-- Our Script -->
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2500,
+                dots: true
+            });
+        });
+    </script>
 
 </body>
 </html>
